@@ -52,15 +52,20 @@ const handleCategor = async (id) => {
     CardContainerText.classList.add('grid');
 
     category.forEach((ele) => {
+      console.log(ele)
       const div = document.createElement("div");
       div.classList = "card bg-base-100 shadow-xl rounded-md";
       // let img = if()
       div.innerHTML = `
-        <div><figure class =" h-52  "><img class="h-full w-full" src=${ele.thumbnail} /></figure>
-        <div>
-        <span></span>
-        </div>
-        </div>          
+        
+        <figure class ="  h-52 relative ">
+        <div><img  class="" src=${ele.thumbnail} /> </div>
+          <div> 
+          <h2 class = "absolute bottom-0  right-0 bg-[#171717c4] text-white px-1 py-1 rounded"> 2 houre 5 second </h2>
+          </div>
+        </figure>
+            
+          
             <div class="p-5">
               <div class="flex gap-3">
               <div class="">
