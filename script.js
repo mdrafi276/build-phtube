@@ -4,17 +4,19 @@ const clickHandler = async () => {
   );
   const data = await response.json();
   const tabContainer = document.getElementById("categorys");
-  data.data.forEach((ele) => {
+  const categorys = data.data;
+  categorys.forEach((ele) => {
     const li = document.createElement("li");
     li.classList =
-      "bg-[#25252533]  rounded-md font-semibold py-2 hover:bg-[#FF1F3D] px-4 hover:text-white cursor-pointer";
+      "bg-[#25252533] py-2 px-4 rounded-md font-semibold hover:bg-[#FF1F3D] hover:text-white cursor-pointer";
     li.innerHTML = `
-     <a onclick="handleCategor(${ele.category_id})">${ele.category}</a>
-     `;
+        <a onclick="handleCategor(${ele.category_id})">${ele.category}</a>
+        `;
     tabContainer.appendChild(li);
   });
 };
-const clickCategoyTow = async (id) => {
+
+const handleCategor = async (id) => {
   const res = await fetch(
     `https://openapi.programming-hero.com/api/videos/category/${id}`
   );
@@ -28,17 +30,17 @@ const clickCategoyTow = async (id) => {
     div.classList = "card bg-base-100 shadow-xl rounded-md";
     // let img = if()
     div.innerHTML = `
-        <figure><img src=${element.thumbnail}/></figure>
+        <figure class =" h-52  "><img class="h-full w-full" src=${element.thumbnail} /></figure>
           <div class="p-5">
             <div class="flex gap-3">
             <div class="">
-            <img class="rounded-full w-10 h-10" src=${element.authors[0].profile_picture} alt="" />
+                <img class="rounded-full w-10 h-10" src=${element.authors[0].profile_picture} alt="" />
             </div>
             <div class="">
                 <h2 class="font-semibold">
                 ${element.title}
                 </h2>
-                <h2 class="text-[#171717B2] font-medium mt-2">${element.authors[0].profile_name} <span>${element.authors[0].verified ? `<span><img class=" inline-block" src="./imagers/bluetic.png" alt=""></span> `: ''}</span></h2>
+                <h2 class="text-[#171717B2] font-medium mt-2">${element.authors[0].profile_name} <span>${element.authors[0].verified ? `<span><img class=" inline-block" src="./fi_10629607.jpg" alt=""></span> `: ''}</span></h2>
                 <p class="text-[#171717B2] font-medium">${element.others.views}</p>   
             </div>
             </div>
@@ -46,6 +48,9 @@ const clickCategoyTow = async (id) => {
         `;
     categoryCardContainer.appendChild(div);
   });
+  
 };
+
+
 clickHandler();
-clickCategoyTow(1000);
+handleCategor(1000);
