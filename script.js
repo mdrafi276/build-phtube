@@ -63,7 +63,7 @@ const handleCategorItem = async (id) => {
       div.innerHTML = `
         
       <figure class ="  h-52 ">
-      <img  class=" w-full" src=${ele.thumbnail}/> 
+      <img  class="h-full w-full" src=${ele.thumbnail}/> 
       </figure>
       </div>
           <div class="p-5">
