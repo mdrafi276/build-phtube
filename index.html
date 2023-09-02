@@ -18,13 +18,13 @@
           <img class="cursor-pointer" src="./logo.png" alt="" />
         </div>
         <div class="">
-          <button
+          <button onclick="videoClick()" id="hello-sort"
             class="bg-[#25252533] md:mr-36 py-3 px-5 rounded-md font-semibold hover:bg-[#FF1F3D] hover:text-white">
             Sort by view
           </button>
         </div>
         <div class="">
-          <a href="./blog.html"><button class="bg-[#FF1F3D] py-2 px-4 rounded-md font-semibold hover:bg-[#FF1F3D] text-white">
+          <a href="./blog.html"><button  class="bg-[#FF1F3D] py-2 px-4 rounded-md font-semibold hover:bg-[#FF1F3D] text-white">
               Blog
             </button></a
           >
@@ -34,7 +34,7 @@
     </header>
     <main class="my-8">
       <div class="mt-14">
-        <ul id="categorys" class="flex justify-center gap-4"></ul>
+        <ul id="tab-container" class="flex justify-center gap-4"></ul>
       </div>
       <div id="category-card" class="cards-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
        
