@@ -160,7 +160,7 @@ const handleCategorItem = async (id) => {
      if(!min && !hrs ){
       div.innerHTML = `
         
-      <figure class =" rounded-lg h-52 ">
+      <figure class ="  h-52 ">
       <img  class=" w-full " src=${ele.thumbnail}/> 
       </figure>
       </div>
