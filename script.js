@@ -52,39 +52,65 @@ const handleCategor = async (id) => {
     CardContainerText.classList.add('grid');
 
     category.forEach((ele) => {
-      console.log(ele)
+      const time = ele.others.posted_date;
+      const second = parseInt(time);
+      const min = Math.floor((second % 3600) / 60);
+      const hrs = Math.floor(second / 3600);
       const div = document.createElement("div");
       div.classList = "card bg-base-100 shadow-xl rounded-md";
-      // let img = if()
+     if(!min && !hrs ){
       div.innerHTML = `
         
-        <figure class ="  h-52 relative ">
-        <div><img  class="" src=${ele.thumbnail} /> </div>
-          <div> 
-          <h2 class = "absolute bottom-0  right-0 bg-[#171717c4] text-white px-1 py-1 rounded"> 2 houre 5 second </h2>
-          </div>
-        </figure>
-            
-          
-            <div class="p-5">
-              <div class="flex gap-3">
-              <div class="">
-                  <img class="rounded-full w-10 h-10" src=${ele.authors[0].profile_picture} alt="" />
-              </div>
-              <div class="">
-                  <h2 class="font-semibold">
-                  ${ele.title}
-                  </h2>
-                  <h2 class="text-[#171717B2] font-medium mt-2">${ele.authors[0].profile_name} <span>${ele.authors[0].verified ? `<span><img class=" inline-block" src="./fi_10629607.jpg" alt=""></span> ` : ''}</span></h2>
-                  <p class="text-[#171717B2] font-medium">${ele.others.views}</p>   
-              </div>
-              </div>
+      <figure class ="  h-52 ">
+      <img  class=" w-full" src=${ele.thumbnail}/> 
+      </figure>
+      </div>
+          <div class="p-5">
+            <div class="flex gap-3">
+            <div class="">
+                <img class="rounded-full w-10 h-10" src=${ele.authors[0].profile_picture} alt="" />
             </div>
-          `;
+            <div class="">
+                <h2 class="font-semibold">
+                ${ele.title}
+                </h2>
+                <h2 class="text-[#171717B2] font-medium mt-2">${ele.authors[0].profile_name} <span>${ele.authors[0].verified ? `<span><img class=" inline-block" src="./fi_10629607.jpg" alt=""></span> ` : ''}</span></h2>
+                <p class="text-[#171717B2] font-medium">${ele.others.views}</p>   
+            </div>
+            </div>
+          </div>
+        `;
+     }
+     else{
+      div.innerHTML = `
+        
+      <div class ="relative">
+      <figure class ="  h-52 ">
+      <img  class=" w-full" src=${ele.thumbnail}/> 
+      </figure>
+      <div class = "absolute  bottom-0  right-0 "> 
+        <h2 class = "  bg-[#171717c4] text-white px-1 py-1 rounded">${hrs?`${hrs}hrs`:""} ${min? ` ${min}min ago`:""}</h2>
+        </div>
+      </div>
+          <div class="p-5">
+            <div class="flex gap-3">
+            <div class="">
+                <img class="rounded-full w-10 h-10" src=${ele.authors[0].profile_picture} alt="" />
+            </div>
+            <div class="">
+                <h2 class="font-semibold">
+                ${ele.title}
+                </h2>
+                <h2 class="text-[#171717B2] font-medium mt-2">${ele.authors[0].profile_name} <span>${ele.authors[0].verified ? `<span><img class=" inline-block" src="./fi_10629607.jpg" alt=""></span> ` : ''}</span></h2>
+                <p class="text-[#171717B2] font-medium">${ele.others.views}</p>   
+            </div>
+            </div>
+          </div>
+        `;
+     }
       CardContainerText.appendChild(div);
     });
   }
-
 };
 
 
