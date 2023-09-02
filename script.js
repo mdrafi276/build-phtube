@@ -87,7 +87,7 @@ const handleCategorItem = async (id) => {
         
       <div class ="relative">
       <figure class ="  h-52 ">
-      <img  class=" w-full" src=${ele.thumbnail}/> 
+      <img  class=" h-full w-full" src=${ele.thumbnail}/> 
       </figure>
       <div class = "absolute  bottom-0  right-0 "> 
         <h2 class = "  bg-[#171717c4] text-white px-1 py-1 rounded">${hrs?`${hrs}hrs`:""} ${min? ` ${min}min ago`:""}</h2>
@@ -161,7 +161,7 @@ const handleCategorItem = async (id) => {
       div.innerHTML = `
         
       <figure class ="  h-52 ">
-      <img  class=" w-full " src=${ele.thumbnail}/> 
+      <img  class=" h-full w-full " src=${ele.thumbnail}/> 
       </figure>
       </div>
           <div class="p-5">
@@ -185,7 +185,7 @@ const handleCategorItem = async (id) => {
         
       <div class ="relative">
       <figure class ="  h-52 ">
-      <img  class=" w-full" src=${ele.thumbnail}/> 
+      <img  class=" h-full w-full" src=${ele.thumbnail}/> 
       </figure>
       <div class = "absolute  bottom-0  right-0 "> 
         <h2 class = "  bg-[#171717c4] text-white px-1 py-1 rounded">${hrs?`${hrs}hrs`:""} ${min? ` ${min}min ago`:""}</h2>
@@ -194,7 +194,7 @@ const handleCategorItem = async (id) => {
           <div class="p-5">
             <div class="flex gap-3">
             <div class="">
-                <img class="rounded-full w-10 h-10" src=${ele.authors[0].profile_picture} alt="" />
+                <img class="rounded-full  w-10 h-10" src=${ele.authors[0].profile_picture} alt="" />
             </div>
             <div class="">
                 <h2 class="font-semibold">
